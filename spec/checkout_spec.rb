@@ -40,6 +40,7 @@ describe Checkout do
 
   context "With promotional rules" do
 	  before do 
+	  	# 1. Create new promotional rule by assigning it to a variable
 	  	rule_1 = '@counter = 0
 	          @counter_discount = 0
 	          @counter = @basket.count do |item|
@@ -53,6 +54,7 @@ describe Checkout do
 		          end 
 				    end'
 			rule_2 = '@total = @total * 0.9 if @total > 30'
+			# 2. Add it to the array so it will be part of the iteration
 	  	promotional_rules = [rule_1, rule_2]
 
 	  	@curry_sauce = { product_code: 001, name: 'Curry Sauce', price: 1.95 }
